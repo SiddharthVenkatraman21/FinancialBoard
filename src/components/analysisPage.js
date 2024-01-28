@@ -6,7 +6,7 @@ import './css/analysisPage.css'
 
 function AnalysisPage() {
     return (
-        <div style={{ backgroundColor: '#202124', minHeight: '150vh', paddingBottom: '50px', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{ backgroundColor: '#121212', minHeight: '150vh', paddingBottom: '50px', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div className="recsCompany" style={{ display: 'flex', justifyContent: 'center' }}>
                 <div className="reco" style={{ width: '50%', marginTop: '20px', justifyContent: 'center' }}>
                     <RecommendationWidget />

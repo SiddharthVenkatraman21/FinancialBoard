@@ -9,7 +9,7 @@ function BudgetGraph({ income, needs, wants, savings }) {
 
   return (
     <div className="budget-graph-container">
-      <h2>Budget Graph</h2>
+      <h2>Progress Tracker</h2>
       <div className="space"></div>
       <p className="income-section">Income: {income}</p>
       <p className="needs-section">Needs: {needs}</p>

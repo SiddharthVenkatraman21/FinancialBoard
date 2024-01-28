@@ -21,7 +21,7 @@ function CompareView() {
   return (
     <div
       style={{
-        backgroundColor: '#202124',
+        backgroundColor: '#121212',
         padding: '20px',
         minHeight: '100vh',
         position: 'relative',

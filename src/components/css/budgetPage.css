@@ -4,7 +4,8 @@
     height: 100vh;
     display: flex;
     justify-content: space-between; /* Adjust as needed */
-    background-color: #202124; /* Grey background color */
+    background-color: #121212; /* Grey background color */
+    text-align:center;
   }
   
   /* Styling for different sections */
