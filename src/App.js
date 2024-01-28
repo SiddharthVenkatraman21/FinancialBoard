@@ -14,6 +14,7 @@ import Reset from './components/Reset';
 import BudgetPage from './components/budgetPage';
 import Dashboard from './components/Dashboard'
 import CreditPage from './components/creditPage';
+import savingsPage from './components/savingsPage';
 
 function App() {
   
@@ -22,14 +23,15 @@ function App() {
       <div className="mainBody">
           <Navbar />
           <Routes>
-              <Route path="/dashboard"  element={<Dashboard/>}/>
-              <Route path="/" element={<Login />} />
+              <Route path="/"  element={<Dashboard/>}/>
+              <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/reset" element={<Reset />} />
               <Route path="/compare" element={<CompareView/>} />
               <Route path="/recommendation" element={<AnalysisPage/>} />
               <Route path="/budget" element={<BudgetPage/>} />
               <Route path="/credit" element={<CreditPage/>} />
+              <Route path="/savingsPage" element={<savingsPage/>} />
               {/* <Route path="/contacts" element={<Contacts/>} />
               <Route path="/map" element={<Map/>} /> */}
           </Routes>

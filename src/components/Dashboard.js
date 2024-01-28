@@ -1,6 +1,7 @@
 // Dashboard.js
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './css/Dashboard.css';
 
 function Dashboard() {
@@ -12,8 +13,8 @@ function Dashboard() {
           Explore the latest trends in the financial world while tracking your personal financial responsibility!
         </p>
         <div className="cta-container">
-          <button className="cta-button">Investments</button>
-          <button className="cta-button secondary">Savings</button>
+          <li className='cta-button'><Link to="/recommendation" className='cta-button'>Investments</Link></li>
+          <li className='cta-button secondary'><Link to="/budget" className='cta-button secondary'>Savings</Link></li>
         </div>
       </div>
     </div>

@@ -1,101 +1,85 @@
 /* budgetGraph.css */
 
-  
 .space {
-    margin-bottom: 50px; /* Adjust as needed */
+  margin-bottom: 50px; /* Adjust as needed */
 }
 
 /* Container styling */
 .budget-graph-container {
-    max-width: 400px;
-    max-height: 400px;
-    margin: 0 auto;
-    margin-top: 250px;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: #2c2e33; /* Dark gray background */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow */
-    border: 2px solid #ccc;
-    color: #fff; /* White text */
-  }
-  
-  /* Heading styling */
-  .budget-graph-container h2 {
-    color: #ffffff; /* Blue heading */
-    margin-bottom: 10px;
-  }
-  
-  /* Bar chart styling */
-  /* budgetGraph.css */
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;
+  margin-top: 250px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #2c2e33; /* Dark gray background */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow */
+  border: 2px solid #ccc;
+  color: #fff; /* White text */
+}
+
+/* Heading styling */
+.budget-graph-container h2 {
+  text-align: center;
+  color: #ffffff; /* Blue heading */
+  margin-bottom: 10px;
+}
+
+/* Bar chart styling */
+/* budgetGraph.css */
 
 .bar-chart {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    position: relative;
-    background: repeating-linear-gradient(to right, transparent, transparent 1.75%, #fff 1%, #fff 2%);
-    /* Adjust the percentage values as needed */
-  }
-  
-  .bar-chart::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -1px; /* Adjust the position as needed */
-    width: 0.25px; /* Adjust the width of the tick */
-    height: 100%;
-    background-color: #fff; /* Adjust the color of the tick */
-  }
-  
-  
-  .bar {
-    height: 20px;
-    margin-bottom: 5px;
-    transition: width 0.5s;
-  }
-  
-  .income-bar {
-    background-color: #28a745; /* Red bar for needs */
-  }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+  background: repeating-linear-gradient(to right, transparent, transparent 1.75%, #fff 1%, #fff 2%);
+  /* Adjust the percentage values as needed */
+}
 
-  .needs-bar {
-    background-color: #dc3545; /* Red bar for needs */
-  }
-  
-  .wants-bar {
-    background-color: #ffc107; /* Yellow bar for wants */
-  }
-  
-  .savings-bar {
-    background-color: #007bff; /* Blue bar for savings */
-  }
-  
-  /* Paragraph styling */
-  .budget-graph-container p {
-    margin-bottom: 10px;
-  }
-  
-  /* Styling for different sections */
-  .income-section {
-    color: #28a745; /* Green text for income */
-    font-weight: bold;
-    text-align: center; /* Center the text */
-  }
-  
-  .needs-section {
-    color: #dc3545; /* Green text for income */
-    font-weight: bold;
-    text-align: center; /* Center the text */
-  }
+.bar-chart::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1px; /* Adjust the position as needed */
+  width: 0.25px; /* Adjust the width of the tick */
+  height: 100%;
+  background-color: #fff; /* Adjust the color of the tick */
+}
 
-  .wants-section {
-    color: #ffc107; /* Green text for income */
-    font-weight: bold;
-    text-align: center; /* Center the text */
-  }
+.bar {
+  height: 20px;
+  margin-bottom: 5px;
+  transition: width 0.5s;
+}
 
-  .savings-section {
-    color: #007bff; /* Green text for income */
-    font-weight: bold;
-    text-align: center; /* Center the text */
-  }
+.income-bar {
+  background-color: #28a745; /* Red bar for needs */
+}
+
+.needs-bar {
+  background-color: #dc3545; /* Red bar for needs */
+}
+
+.wants-bar {
+  background-color: #ffc107; /* Yellow bar for wants */
+}
+
+.savings-bar {
+  background-color: #007bff; /* Blue bar for savings */
+}
+
+/* Paragraph styling */
+.budget-graph-container p {
+  margin-bottom: 10px;
+}
+
+/* Styling for different sections */
+.income-section,
+.needs-section,
+.wants-section,
+.savings-section {
+  font-weight: bold;
+  text-align: center; /* Center the text */
+  color: #fff; /* Set text color to white */
+}
