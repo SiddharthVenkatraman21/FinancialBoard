@@ -47,6 +47,9 @@ function Login() {
         <div>
           Don't have an account? <Link to="/register">Register</Link> now.
         </div>
+        <div>
+          Click here to use site as a <Link to="/dashboard">guest</Link>.
+        </div>
       </div>
     </div>
   );

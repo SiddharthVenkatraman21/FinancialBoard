@@ -8,7 +8,8 @@ import CompanyNewsContainer from './components/CompanyNewsContainer'
 import StockNewsContainer from './components/stockNewsContainer'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from './components/Login';
-
+import Register from './components/Register';
+import Reset from './components/Reset';
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
 <Router>
   <Routes>
     <Route path="/" element={<Login />} />
+    <Route path="/register" element={<Register />} />
+    <Route path="/reset" element={<Reset />} />
     <Route path="/dashboard" element={
       <div>
         <div className="StockBudget">
