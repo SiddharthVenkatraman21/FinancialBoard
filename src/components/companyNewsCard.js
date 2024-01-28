@@ -32,8 +32,11 @@ function CompanyNewsCard({ newsItem }) {
             <div className="date-badge">{formatDate(newsItem.datetime)}</div>
             <div className="news-card-content">
                 <h2>{newsItem.headline}</h2>
-                <div className="news-card-footer">
-                    <p>Source: {newsItem.source}</p>
+
+                <div className="scrollableContainer">
+                    <div className="newsCardsDivs">
+                        <p>Source: {newsItem.source}</p>
+                    </div>
                 </div>
             </div>
         </a>
