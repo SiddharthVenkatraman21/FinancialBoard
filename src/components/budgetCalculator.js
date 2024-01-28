@@ -139,8 +139,6 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
       console.error("Error updating user info: ", e);
     }
 
-    
-
   };
 
   // Render BudgetCalculator content
@@ -190,9 +188,6 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
           value={income === null ? '' : income}
           onChange={handleIncomeChange}
         />
-      </div>
-      <div>
-        <button onClick={handleMonthlySubmit}>Save</button>
       </div>
       <div>
         <h2>Budget Portions</h2>
@@ -245,6 +240,9 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
           value={expenses.savings === null ? '' : expenses.savings}
           onChange={(e) => handleExpenseChange(e, 'savings')}
         />
+      </div>
+      <div>
+        <button onClick={handleMonthlySubmit}>Save</button>
       </div>
       <div className="remaining-budget">
         <h2>Budget Success</h2>
