@@ -11,6 +11,7 @@ import AnalysisPage from './components/analysisPage'
 import Login from './components/Login';
 import Register from './components/Register';
 import Reset from './components/Reset';
+import BudgetPage from './components/budgetPage';
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
           <Route path="/reset" element={<Reset />} />
           <Route path="/compare" element={<CompareView/>} />
           <Route path="/recommendation" element={<AnalysisPage/>} />
+          <Route path="/budget" element={<BudgetPage/>} />
         </Routes>
       </div>
     </Router>
