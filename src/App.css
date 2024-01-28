@@ -9,9 +9,24 @@ body {
   color: #fff; /* White text */
 }
 
-.App {
+/* .App {
   text-align: center;
   padding: 20px;
+} */
+
+.newsCardsDivs {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  white-space: nowrap; /* Prevent wrapping */
+  gap:8px;
+  padding-top:30px;
 }
+
+.StockBudget{
+  margin-top:20px;
+}
+
+
 
 
