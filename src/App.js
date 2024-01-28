@@ -16,7 +16,8 @@ function App() {
           <Navbar />
 
           <Routes>
-              <Route path="/" element={<CompareView/>} />
+              <Route path="/"  />
+              <Route path="/compare" element={<CompareView/>} />
               <Route path="/prices" element={<RecommendationWidget/>} />
               {/* <Route path="/contacts" element={<Contacts/>} />
               <Route path="/map" element={<Map/>} /> */}

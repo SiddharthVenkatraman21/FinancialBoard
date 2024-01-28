@@ -50,8 +50,6 @@ function StockQuote({ onDelete }) {
     },
   });
 
-  
-
   useEffect(() => {
     // Fetch data for default symbol (MSFT) when component initially renders
     fetchData(defaultSymbol);
@@ -99,7 +97,6 @@ function StockQuote({ onDelete }) {
       });
   };
   
-
   const handleFetchData = () => {
     setSymbol(inputSymbol);
     fetchData(inputSymbol);
@@ -152,7 +149,6 @@ function StockQuote({ onDelete }) {
       }));
     }
   };
-  
 
   const currentPriceLine = quoteData && quoteData.c ? {
     yaxis: [
@@ -173,8 +169,9 @@ function StockQuote({ onDelete }) {
 
   return (
     <div className={`stock-quote-container ${hideToolbar ? 'hide-toolbar hover-disabled' : ''}`}>
+      <div>
         <button className="delete-button" onClick={onDelete}>X</button>
-    <div className={`stock-quote-container ${hideToolbar ? 'hide-toolbar hover-disabled' : ''}`}>
+      </div>
       <div>
         <label htmlFor="symbolInput">Symbol:</label>
         <input
@@ -217,7 +214,6 @@ function StockQuote({ onDelete }) {
         height={350}
         annotations={{ yaxis: [currentPriceLine] }}
       />
-    </div>
     </div>
   );
 }
