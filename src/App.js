@@ -9,6 +9,7 @@ import Navbar from './components/navbar'
 import CompareView from './components/compareview'
 import AnalysisPage from './components/analysisPage'
 import BudgetPage from './components/budgetPage';
+import Dashboard from './components/Dashboard'
 
 function App() {
   return (
