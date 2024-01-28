@@ -66,6 +66,10 @@ var firebaseConfig = {
         name,
         authProvider: "local",
         email,
+        monthly_income: [],
+        monthly_savings: [],
+        months_recorded: [],
+        stocks_of_interest: [],
       });
     } catch (err) {
       console.error(err);
