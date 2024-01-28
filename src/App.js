@@ -7,18 +7,18 @@ import StockNewsContainer from './components/stockNewsContainer';
 import RecommendationWidget from './components/recomendationChart';
 import Navbar from './components/navbar'
 import CompareView from './components/compareview'
+import AnalysisPage from './components/analysisPage'
 
 function App() {
   return (
     <Router>
       <div className="mainBody">
-          {/* <Countdown /> */}
           <Navbar />
 
           <Routes>
               <Route path="/"  />
               <Route path="/compare" element={<CompareView/>} />
-              <Route path="/prices" element={<RecommendationWidget/>} />
+              <Route path="/recommendation" element={<AnalysisPage/>} />
               {/* <Route path="/contacts" element={<Contacts/>} />
               <Route path="/map" element={<Map/>} /> */}
           </Routes>
