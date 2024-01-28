@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect} from 'react';
 import './css/stockNewsCard.css';
 
-function NewsCard({ newsItem }) {
+function CompanyNewsCard({ newsItem }) {
     // Function to convert Unix timestamp to human-readable date
     const formatDate = (timestamp) => {
         const date = new Date(timestamp * 1000);
@@ -40,4 +40,4 @@ function NewsCard({ newsItem }) {
     );
 }
 
-export default NewsCard;
+export default CompanyNewsCard;
