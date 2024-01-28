@@ -6,7 +6,7 @@ import BudgetCalculator from './components/budgetCalculator';
 import NewsComponent from './components/stockNewsCard';
 import CompanyNewsContainer from './components/CompanyNewsContainer'
 import StockNewsContainer from './components/stockNewsContainer'
-
+x
 
 
 function App() {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './css/budgetCalculator.css'; // Add your CSS file path
 
+
 function BudgetCalculator() {
   const [income, setIncome] = useState(null);
   const [expenses, setExpenses] = useState({
