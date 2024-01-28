@@ -1,35 +1,35 @@
-s.login {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:#202124;
-  }
-  .login__container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: black;
-    padding: 30px;
-  }
-  .login__textBox {
-    padding: 10px;
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  .login__btn {
-    padding: 10px;
-    font-size: 18px;
-    margin-bottom: 10px;
-    background-color: transparent;
-    border: 1px solid #007bff;
-    color:  #007bff;
-  }
-  .login__google {
-    background-color:  #007bff;
-    color: #121212;
-  }
-  .login div {
-    margin-top: 7px;
-  }
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#121212;
+}
+.login__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+  padding: 30px;
+}
+.login__textBox {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.login__btn {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color:  #007bff;
+}
+.login__google {
+  background-color:  #007bff;
+  color: #121212;
+}
+.login div {
+  margin-top: 7px;
+}
