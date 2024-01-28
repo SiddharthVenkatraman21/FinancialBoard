@@ -30,7 +30,7 @@ function CompanyNewsContainer() {
                 const filteredAndSortedData = data
                     .filter(item => item.image !== '')
                     .sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
-                setCompanyNews(filteredAndSortedData.slice(0, 10));
+                setCompanyNews(filteredAndSortedData.slice(0, 4));
             })
             .catch(error => console.error('Error:', error.message))
             .finally(() => {
@@ -53,8 +53,8 @@ function CompanyNewsContainer() {
     };
 
     return (
-        <div className="container">
-            <h1 className="title">Company News</h1>
+        <div className="App">
+            <h1 className="title">Latest Company News</h1>
             <div className="searchContainer">
                 <input
                     type="text"
@@ -66,11 +66,11 @@ function CompanyNewsContainer() {
                     {loading ? 'Searching...' : 'Search'}
                 </button>
             </div>
-            <div className="newsCardsDivs">
-                {companyNews.map((newsItem, index) => (
-                    <CompanyNewsCard key={index} newsItem={newsItem} />
-                ))}
-            </div>
+                <div className="newsCardsDivs">
+                    {companyNews.map((newsItem, index) => (
+                        <CompanyNewsCard key={index} newsItem={newsItem} />
+                    ))}
+                </div>
         </div>
     );
 }

@@ -3,25 +3,92 @@
     gap: 8px; /* Adjust the gap between input and button */
      /* Adjust the width as needed */
     justify-content: center;
+    margin-right:100px;
+    margin-bottom:15px;
+    
 }
 
 .searchButton{
-    width:90px;
+    width:120px;
+    height:30px;
+    justify-content: center;
+    padding:0;
+    margin-top:20px;
+
 }
 
 .searchInput{
-    width:150px;
+    margin-top: 20px;
+    width:100px;
+    height:30px;
 }
+
+body {
+    overflow-x: hidden;
+  }
+
+/* companyNewsContainer.css */
+
+
+
+.newsCardsDivs {
+    display: flex; /* Ensure flex layout */
+}
+
+body {
+    overflow-x: hidden;
+  }
+  
+
+
+  
 
 .title {
     text-align: center; /* Center the title */
-    font-size: 24px; /* Adjust font size as needed */
-    margin-bottom: 20px; /* Add some space below the title */
+    font-size: 48px; /* Adjust font size as needed */
+    margin-top: 35px; /* Add some space below the title */
+    margin-right:130px;
 }
 
 .container{
     margin-left:10px;
 }
+
+.scrollableContainer {
+    overflow-x: auto;
+    max-width: 100%; /* Set the maximum width of the scrollable container */
+    padding-bottom: 20px; /* Add padding to ensure space for horizontal scrollbar */
+  }
+  
+
+
+/* companyNewsContainer.css */
+
+/* Inside companyNewsContainer.css */
+.newsCardsDivs {
+    display: flex;
+    flex-wrap: wrap;
+    gap:40px;
+}
+
+.companyNewsCard {
+    width: calc(50% - 20px); /* Two cards per row with spacing */
+    margin-bottom: 20px; /* Adjust spacing between rows */
+}
+
+
+
+/* Add other styles as needed */
+
+
+  
+  /* Add other styles as needed */
+  
+
+  
+  /* Add other styles as needed */
+  
+
 
 
 

@@ -1,0 +1,54 @@
+/* Add these styles to your existing CSS */
+
+.budget-page-container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    background-color: #202124; /* Grey background color */
+  }
+  
+  /* Styling for different sections */
+  .income-section,
+  .needs-section,
+  .wants-section,
+  .savings-section {
+    color: #fff; /* White text */
+    font-weight: bold;
+    text-align: center; /* Center the text */
+    margin: 10px 0; /* Add margin for spacing */
+  }
+  
+  /* Container styling for BudgetCalculator and BudgetGraph */
+  .budget-calculator-container,
+  .budget-graph-container {
+    flex: 1;
+    max-width: 48%; /* Adjust as needed */
+    margin-right: 2%; /* Adjust as needed */
+  }
+
+  .income-section {
+    color: #28a745; /* Green text for income */
+    font-weight: bold;
+    text-align: center; /* Center the text */
+  }
+  
+  .needs-section {
+    color: #dc3545; /* Green text for income */
+    font-weight: bold;
+    text-align: center; /* Center the text */
+  }
+
+  .wants-section {
+    color: #ffc107; /* Green text for income */
+    font-weight: bold;
+    text-align: center; /* Center the text */
+  }
+
+  .savings-section {
+    color: #007bff; /* Green text for income */
+    font-weight: bold;
+    text-align: center; /* Center the text */
+  }
+  
+  /* Add the 'budget-page-container' class to your wrapping div in BudgetPage.js */
+  

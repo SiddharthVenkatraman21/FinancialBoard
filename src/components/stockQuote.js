@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
 import './css/stockQuote.css';
 
-function StockQuote() {
+function StockQuote({ onDelete }) {
   const defaultSymbol = 'MSFT'; // Default symbol
   const [symbol, setSymbol] = useState(defaultSymbol);
   const [inputSymbol, setInputSymbol] = useState(defaultSymbol);
@@ -97,7 +97,6 @@ function StockQuote() {
       });
   };
   
-
   const handleFetchData = () => {
     setSymbol(inputSymbol);
     fetchData(inputSymbol);
@@ -115,8 +114,18 @@ function StockQuote() {
 
   const updateChart = (data) => {
     if (data) {
-      const isPriceIncreased = data.c > data.o;
-      const candleColor = isPriceIncreased ? '#4CAF50' : '#F44336';
+      const isPriceIncreased = parseFloat(data.c) > parseFloat(data.o);
+      let candleColor
+      if (isPriceIncreased)
+      {
+        candleColor = '#4CAF50'
+      }
+      else
+      {
+        candleColor = '#F44336'
+      }
+
+
   
       const chartData = [{
         data: [{
@@ -126,18 +135,18 @@ function StockQuote() {
         }],
       }];
   
-      const currentPriceLine = {
-        y: data.c,
-        borderColor: '#00E396',
-        label: {
-          borderColor: '#00E396',
-          style: {
-            color: '#fff',
-            background: '#00E396'
-          },
-          text: 'Current Price: ' + data.c.toFixed(2),
-        },
-      };
+      // const currentPriceLine = {
+      //   y: data.c,
+      //   borderColor: '#00E396',
+      //   label: {
+      //     borderColor: '#00E396',
+      //     style: {
+      //       color: '#fff',
+      //       background: '#00E396'
+      //     },
+      //     text: 'Current Price: ' + data.c.toFixed(2),
+      //   },
+      // };
 
       setHideToolbar(true);
   
@@ -150,7 +159,6 @@ function StockQuote() {
       }));
     }
   };
-  
 
   const currentPriceLine = quoteData && quoteData.c ? {
     yaxis: [
@@ -172,6 +180,9 @@ function StockQuote() {
   return (
     <div className={`stock-quote-container ${hideToolbar ? 'hide-toolbar hover-disabled' : ''}`}>
       <div>
+        <button className="delete-button" onClick={onDelete}>X</button>
+      </div>
+      <div style={{textAlign:'center'}}>
         <label htmlFor="symbolInput">Symbol:</label>
         <input
           type="text"
@@ -195,10 +206,10 @@ function StockQuote() {
             <p>Current Price: <span style={{ color: '#fdca40' }}>{quoteData.c}</span></p>
           )}
           {quoteData.h && (
-            <p>High Today: <span style={{ color: '#6096ba' }}>{quoteData.h}</span></p>
+            <p>Open Price: <span style={{ color: '#6096ba' }}>{quoteData.o}</span></p>
           )}
           {quoteData.l && (
-            <p>Low Today: <span style={{ color: '#b1ddf1' }}>{quoteData.l}</span></p>
+            <p>Previous Close: <span style={{ color: '#b1ddf1' }}>{quoteData.pc}</span></p>
           )}
           {quoteData.dp && (
             <p>Percent Change: <span style={{ color: getPerformanceColor(quoteData.dp) }}>{quoteData.dp}</span></p>

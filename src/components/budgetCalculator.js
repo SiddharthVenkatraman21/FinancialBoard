@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+// BudgetCalculator.js
+import React, { useState, useEffect } from 'react';
 import './css/budgetCalculator.css'; // Add your CSS file path
+import BudgetGraph from './budgetGraph'; // Import BudgetGraph component
+import { serverTimestamp, collection, addDoc, arrayUnion, doc, updateDoc } from "./firebase";
+import { useUser } from '../UserContext';
+import { db, query, where, getDocs } from './firebase';
 
+<<<<<<< HEAD
 
 function BudgetCalculator() {
+=======
+function BudgetCalculator({ initialBudgetData, onInputChange }) {
+  const { uid } = useUser();
+>>>>>>> main
   const [income, setIncome] = useState(null);
   const [expenses, setExpenses] = useState({
     needs: null,
@@ -37,6 +47,15 @@ function BudgetCalculator() {
       [category]: value,
     }));
   };
+
+  useEffect(() => {
+    // Update the parent state whenever there's a change in the input fields
+    onInputChange({
+      income,
+      expenses,
+      idealPercentages,
+    });
+  }, [income, expenses, idealPercentages, onInputChange]);
 
   const calculateBudget = () => {
     const necessitiesPercentage = (expenses.needs / income) * 100 || 0;
@@ -86,26 +105,53 @@ function BudgetCalculator() {
     }
   };
 
-  const handleSave = () => {
-    // Log the data to the console
-    console.log({
-      income,
-      expenses,
-      idealPercentages,
-      selectedMonth,
-      selectedYear,
-      budgetData,
-    });
-  
-    // Add logic to save data to a database if needed
-    console.log('Data saved:', { income, expenses, idealPercentages, selectedMonth, selectedYear });
+  const handleMonthlySubmit = async () => {
+    // add MM:YYYY and monthly income vals to collection
+    if (!uid) {
+      console.log("User is not logged in");
+      return;
+    }
+    const userId = uid;
+
+    // finding documentID
+    const collectionRef = collection(db,"users");
+    const q = query(collectionRef,where("uid") == uid);
+
+    const querySnapshot = await getDocs(q);
+    const documentId = querySnapshot.docs[0].id;
+
+    let date = Date.now();
+    if(selectedMonth < 10) {
+      let date = Date.parse(selectedYear+"-0"+selectedMonth+"-01");
+    } else {
+      let date = Date.parse(selectedYear+"-"+selectedMonth+"-01");
+    }
+
+    try {
+      const userDocRef = doc(db, "users",documentId);
+      const expenses_sum = expenses.needs+expenses.wants;
+
+      await updateDoc(userDocRef, {
+        months_recorded: arrayUnion(date),
+        monthly_income: arrayUnion(income),
+        monthly_necessities: arrayUnion(expenses.needs),
+        monthly_wants: arrayUnion(expenses.wants),
+        monthly_savings: arrayUnion(expenses.savings),
+        monthly_total_expenses: arrayUnion(expenses_sum),
+      });
+      console.log("User info updated!");
+    } catch (e) {
+      console.error("Error updating user info: ", e);
+    }
+
   };
 
+  // Render BudgetCalculator content
   return (
     <div className="budget-calculator-container">
       <h1>Budget Calculator</h1>
       <div>
-        <h2>Select Month and Year</h2>
+        <h2> </h2>
         <label htmlFor="monthSelect">Month:</label>
         <select
           id="monthSelect"
@@ -125,7 +171,7 @@ function BudgetCalculator() {
           <option value={11}>November</option>
           <option value={12}>December</option>
         </select>
-        <label htmlFor="yearSelect">Year:</label>
+        <label htmlFor="yearSelect">            Year:</label>
         <select
           id="yearSelect"
           value={selectedYear}
@@ -139,7 +185,7 @@ function BudgetCalculator() {
         </select>
       </div>
       <div>
-        <h2>Your Monthly Income</h2>
+        <h2> </h2>
         <label htmlFor="incomeInput">Please input your monthly income:</label>
         <input
           type="number"
@@ -149,7 +195,7 @@ function BudgetCalculator() {
         />
       </div>
       <div>
-        <h2>Ideal Budget Percentages</h2>
+        <h2>Budget Portions</h2>
         <label htmlFor="necessitiesPercentage">Necessities (%):</label>
         <input
           type="number"
@@ -173,8 +219,8 @@ function BudgetCalculator() {
         />
       </div>
       <div>
-        <h2>Your Expenses This Month</h2>
-        <label htmlFor="needsInput">Monthly Needs:</label>
+        <h2>Month Expenses</h2>
+        <label htmlFor="needsInput">Needs:</label>
         <input
           type="number"
           id="needsInput"
@@ -183,7 +229,7 @@ function BudgetCalculator() {
         />
       </div>
       <div>
-        <label htmlFor="wantsInput">Monthly Wants:</label>
+        <label htmlFor="wantsInput">Wants:</label>
         <input
           type="number"
           id="wantsInput"
@@ -192,7 +238,7 @@ function BudgetCalculator() {
         />
       </div>
       <div>
-        <label htmlFor="savingsInput">Monthly Savings/Debt Repayments:</label>
+        <label htmlFor="savingsInput">Savings/Debt Repayments:</label>
         <input
           type="number"
           id="savingsInput"
@@ -200,8 +246,11 @@ function BudgetCalculator() {
           onChange={(e) => handleExpenseChange(e, 'savings')}
         />
       </div>
+      <div>
+        <button onClick={handleMonthlySubmit}>Save</button>
+      </div>
       <div className="remaining-budget">
-        <h2>Your Budget Corrections</h2>
+        <h2>Budget Success</h2>
         {expenses.needs !== null && (
           <p>Necessities: {getRemainingBudgetMessage('necessities', budgetData.remainingNecessitiesBudget)}</p>
         )}
@@ -212,7 +261,7 @@ function BudgetCalculator() {
           <p>Savings: {getRemainingBudgetMessage('savings', budgetData.remainingSavingsBudget)}</p>
         )}
       </div>
-      <button onClick={handleSave}>Save</button>
+      {/* BudgetGraph is not rendered here */}
     </div>
   );
 }
