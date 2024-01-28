@@ -53,7 +53,7 @@ function CompanyNewsContainer() {
     };
 
     return (
-        <div className="App">
+        <div className="container">
             <h1 className="title">Company News</h1>
             <div className="searchContainer">
                 <input

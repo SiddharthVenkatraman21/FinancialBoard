@@ -20,8 +20,8 @@ function StockNewsContainer()
 
     return (
         <div className="App">
-            <h1 className="title">Market News</h1>
-            <div className="newsCardsDivs">
+            <h1 className="title">Foreign Exchange News</h1>
+            <div style={{ marginLeft: '10px' }} className="newsCardsDivs">
                 {newsData.map((newsItem, index) => (
                     <NewsComponent key={index} newsItem={newsItem} />
                 ))}
