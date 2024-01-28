@@ -1,0 +1,104 @@
+/* CreditPage.css */
+body {
+    background-color: #202124; /* Dark gray color */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    color: #fff; /* Set default text color to white */
+  }
+  
+
+/* Container styling */
+.credit-page-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #2c2e33; /* Dark gray background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow */
+    border: 2px solid #ccc;
+    color: #202124; /* White text */
+  }
+
+  .credit-card-details {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #2c2e33; /* Dark gray background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow */
+    border: 2px solid #ccc;
+    color: #202124; /* White text */
+  }
+  
+
+  .credit-page-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #2c2e33; /* Dark gray background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow */
+    border: 2px solid #ccc;
+    color: #fff; /* White text */
+  }
+  
+  
+  /* Heading styling */
+  .credit-page-container h1 {
+    color: #ffffff; /* Blue heading */
+    margin-bottom: 20px;
+  }
+  
+  /* Credit card styling */
+  .credit-card {
+    margin-top: 20px;
+  }
+  
+  .credit-card h2 {
+    color: #ffffff; /* Dark heading color */
+    margin-bottom: 10px;
+  }
+  
+  .credit-card p {
+    color: #fff; /* White text */
+    margin-bottom: 10px;
+  }
+  
+  /* Link styling */
+  .credit-card a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+  }
+  
+  .credit-card a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Button styling */
+  .navigation-buttons button {
+    max-width: 100px; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #2c2e33; /* Dark gray background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow */
+    border: 2px solid #ccc;
+    color: #fff; /* White text */
+  }
+  
+  .navigation-buttons button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 480px) {
+    .credit-card {
+      width: 90%; /* Adjust the width for smaller screens */
+    }
+    .navigation-buttons button {
+      max-width: 100%; /* Adjust as needed */
+    }
+  }
