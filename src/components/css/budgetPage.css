@@ -1,6 +1,7 @@
 /* Add these styles to your existing CSS */
 
 .budget-page-container {
+    height: 100vh;
     display: flex;
     justify-content: space-between; /* Adjust as needed */
     background-color: #202124; /* Grey background color */

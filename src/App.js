@@ -12,21 +12,29 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Reset from './components/Reset';
 import BudgetPage from './components/budgetPage';
+import Dashboard from './components/Dashboard'
+import CreditPage from './components/creditPage';
 
 function App() {
   
   return (
     <Router>
       <div className="mainBody">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/reset" element={<Reset />} />
-          <Route path="/compare" element={<CompareView/>} />
-          <Route path="/recommendation" element={<AnalysisPage/>} />
-          <Route path="/budget" element={<BudgetPage/>} />
-        </Routes>
+          <Navbar />
+          <Routes>
+              <Route path="/"  element={<Dashboard/>}/>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/reset" element={<Reset />} />
+              <Route path="/compare" element={<CompareView/>} />
+              <Route path="/recommendation" element={<AnalysisPage/>} />
+              <Route path="/budget" element={<BudgetPage/>} />
+              <Route path="/credit" element={<CreditPage/>} />
+              {/* <Route path="/contacts" element={<Contacts/>} />
+              <Route path="/map" element={<Map/>} /> */}
+          </Routes>
+
+          {/* <Footer /> */}
       </div>
     </Router>
   );

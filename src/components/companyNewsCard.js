@@ -35,7 +35,7 @@ function CompanyNewsCard({ newsItem }) {
 
                 <div className="scrollableContainer">
                     <div className="newsCardsDivs">
-                        <p>Source: {newsItem.source}</p>
+                        <p style={{marginLeft:'100px'}}>Source: {newsItem.source}</p>
                     </div>
                 </div>
             </div>
