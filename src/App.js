@@ -8,17 +8,24 @@ import RecommendationWidget from './components/recomendationChart';
 import Navbar from './components/navbar'
 import CompareView from './components/compareview'
 import AnalysisPage from './components/analysisPage'
+import Login from './components/Login';
+import Register from './components/Register';
+import Reset from './components/Reset';
 import BudgetPage from './components/budgetPage';
 import Dashboard from './components/Dashboard'
 import CreditPage from './components/creditPage';
 
 function App() {
+  
   return (
     <Router>
       <div className="mainBody">
           <Navbar />
           <Routes>
               <Route path="/"  element={<Dashboard/>}/>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/reset" element={<Reset />} />
               <Route path="/compare" element={<CompareView/>} />
               <Route path="/recommendation" element={<AnalysisPage/>} />
               <Route path="/budget" element={<BudgetPage/>} />
@@ -32,5 +39,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
