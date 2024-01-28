@@ -21,6 +21,7 @@
   
   /* Heading styling */
   .budget-graph-container h2 {
+    text-align: center;
     color: #ffffff; /* Blue heading */
     margin-bottom: 10px;
   }
