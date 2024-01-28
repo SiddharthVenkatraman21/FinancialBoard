@@ -84,20 +84,20 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
 
     const categoryBudget = income * (idealPercentages[category] / 100);
 
-    if (remainingBudget < 0) {
-      if (category === 'savings') {
-        return `You need to add $${Math.abs(remainingBudget).toFixed(2)} more next month to meet your savings goal! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
-      } else {
-        return `You need to spend $${Math.abs(remainingBudget).toFixed(2)} less next month in ${category}! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
-      }
-    } else if (remainingBudget > 0) {
-      if (category === 'savings') {
-        return `Congrats on saving an extra $${Math.abs(remainingBudget).toFixed(2)} beyond your goal! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
-      }
-      return `Congrats on saving $${remainingBudget.toFixed(2)} in ${category} this month! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
-    } else {
-      return `You've perfectly followed your budget in ${category} this month! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
-    }
+    // if (remainingBudget < 0) {
+    //   if (category === 'savings') {
+    //     return `You need to add $${Math.abs(remainingBudget).toFixed(2)} more next month to meet your savings goal! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
+    //   } else {
+    //     return `You need to spend $${Math.abs(remainingBudget).toFixed(2)} less next month in ${category}! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
+    //   }
+    // } else if (remainingBudget > 0) {
+    //   if (category === 'savings') {
+    //     return `Congrats on saving an extra $${Math.abs(remainingBudget).toFixed(2)} beyond your goal! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
+    //   }
+    //   return `Congrats on saving $${remainingBudget.toFixed(2)} in ${category} this month! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
+    // } else {
+    //   return `You've perfectly followed your budget in ${category} this month! Your goal for this month was $${categoryBudget.toFixed(2)}.`;
+    // }
   };
 
   const handleMonthlySubmit = async () => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { db } from './firebase'; // Update the import path based on your file structure
+import './css/savingsPage.css'; // Import the CSS file
 
 function SavingsPage() {
   const [data, setData] = useState({
