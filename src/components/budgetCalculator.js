@@ -8,11 +8,11 @@ import { db, query, where, getDocs } from './firebase';
 
 function BudgetCalculator({ initialBudgetData, onInputChange }) {
   const { uid } = useUser();
-  const [income, setIncome] = useState(null);
+  const [income, setIncome] = useState(0);
   const [expenses, setExpenses] = useState({
-    needs: null,
-    wants: null,
-    savings: null,
+    needs: 0,
+    wants: 0,
+    savings: 0,
   });
   const [idealPercentages, setIdealPercentages] = useState({
     necessities: 50,
@@ -23,12 +23,12 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
   const [selectedYear, setSelectedYear] = useState(2024);
 
   const handleIncomeChange = (event) => {
-    const value = parseFloat(event.target.value) || null;
+    const value = parseFloat(event.target.value) || 0;
     setIncome(value);
   };
 
   const handleExpenseChange = (event, category) => {
-    const value = parseFloat(event.target.value) || null;
+    const value = parseFloat(event.target.value) || 0;
     setExpenses((prevExpenses) => ({
       ...prevExpenses,
       [category]: value,
@@ -36,7 +36,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
   };
 
   const handleIdealPercentageChange = (event, category) => {
-    const value = parseFloat(event.target.value) || null;
+    const value = parseFloat(event.target.value) || 0;
     setIdealPercentages((prevPercentages) => ({
       ...prevPercentages,
       [category]: value,
@@ -185,7 +185,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
         <input
           type="number"
           id="incomeInput"
-          value={income === null ? '' : income}
+          value={income}
           onChange={handleIncomeChange}
         />
       </div>
@@ -219,7 +219,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
         <input
           type="number"
           id="needsInput"
-          value={expenses.needs === null ? '' : expenses.needs}
+          value={expenses.needs}
           onChange={(e) => handleExpenseChange(e, 'needs')}
         />
       </div>
@@ -228,7 +228,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
         <input
           type="number"
           id="wantsInput"
-          value={expenses.wants === null ? '' : expenses.wants}
+          value={expenses.wants}
           onChange={(e) => handleExpenseChange(e, 'wants')}
         />
       </div>
@@ -237,7 +237,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
         <input
           type="number"
           id="savingsInput"
-          value={expenses.savings === null ? '' : expenses.savings}
+          value={expenses.savings}
           onChange={(e) => handleExpenseChange(e, 'savings')}
         />
       </div>
