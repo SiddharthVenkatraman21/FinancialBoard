@@ -10,18 +10,19 @@ import CompareView from './components/compareview'
 import AnalysisPage from './components/analysisPage'
 import BudgetPage from './components/budgetPage';
 import Dashboard from './components/Dashboard'
+import CreditPage from './components/creditPage';
 
 function App() {
   return (
     <Router>
       <div className="mainBody">
           <Navbar />
-
           <Routes>
               <Route path="/"  element={<Dashboard/>}/>
               <Route path="/compare" element={<CompareView/>} />
               <Route path="/recommendation" element={<AnalysisPage/>} />
               <Route path="/budget" element={<BudgetPage/>} />
+              <Route path="/credit" element={<CreditPage/>} />
               {/* <Route path="/contacts" element={<Contacts/>} />
               <Route path="/map" element={<Map/>} /> */}
           </Routes>
