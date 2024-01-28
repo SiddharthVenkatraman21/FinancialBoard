@@ -14,7 +14,7 @@ import Reset from './components/Reset';
 import BudgetPage from './components/budgetPage';
 import Dashboard from './components/Dashboard'
 import CreditPage from './components/creditPage';
-import savingsPage from './components/savingsPage';
+import SavingsPage from './components/savingsPage';
 
 function App() {
   
