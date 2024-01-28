@@ -1,48 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StockQuote from './components/stockQuote';
 import BudgetCalculator from './components/budgetCalculator'; 
-import NewsComponent from './components/stockNewsCard';
-import CompanyNewsContainer from './components/CompanyNewsContainer'
-import StockNewsContainer from './components/stockNewsContainer'
-import BudgetGraph from './components/budgetGraph'; 
+import CompanyNewsContainer from './components/CompanyNewsContainer';
+import StockNewsContainer from './components/stockNewsContainer';
+import RecommendationWidget from './components/recomendationChart';
+import Navbar from './components/navbar'
+import CompareView from './components/compareview'
+import AnalysisPage from './components/analysisPage'
 
 function App() {
-  const [budgetData, setBudgetData] = useState({
-    income: null,
-    expenses: {
-      needs: null,
-      wants: null,
-      savings: null,
-    },
-    idealPercentages: {
-      necessities: 50,
-      wants: 30,
-      savings: 20,
-    },
-  });
-
-  const handleInputChange = (data) => {
-    // Update the parent state
-    setBudgetData((prevData) => ({
-      ...prevData,
-      ...data,
-    }));
-  };
-
   return (
-    <div className="App">
-      <div className="StockBudget">
-        {/* Pass budgetData and handleInputChange as props to BudgetCalculator */}
-        <StockQuote/> 
-        <BudgetCalculator budgetData={budgetData} onInputChange={handleInputChange} />
-        {/* Pass necessary data as props to BudgetGraph */}
-        <BudgetGraph income={budgetData.income} needs={budgetData.expenses.needs} wants={budgetData.expenses.wants} savings={budgetData.expenses.savings} />
+    <Router>
+      <div className="mainBody">
+          <Navbar />
+
+          <Routes>
+              <Route path="/"  />
+              <Route path="/compare" element={<CompareView/>} />
+              <Route path="/recommendation" element={<AnalysisPage/>} />
+              {/* <Route path="/contacts" element={<Contacts/>} />
+              <Route path="/map" element={<Map/>} /> */}
+          </Routes>
+
+          {/* <Footer /> */}
       </div>
-      <CompanyNewsContainer/>
-      <StockNewsContainer/>
-    </div>
+    </Router>
   );
 }
 

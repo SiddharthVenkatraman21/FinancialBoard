@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
 import './css/stockQuote.css';
 
-function StockQuote() {
+function StockQuote({ onDelete }) {
   const defaultSymbol = 'MSFT'; // Default symbol
   const [symbol, setSymbol] = useState(defaultSymbol);
   const [inputSymbol, setInputSymbol] = useState(defaultSymbol);
@@ -97,7 +97,6 @@ function StockQuote() {
       });
   };
   
-
   const handleFetchData = () => {
     setSymbol(inputSymbol);
     fetchData(inputSymbol);
@@ -150,7 +149,6 @@ function StockQuote() {
       }));
     }
   };
-  
 
   const currentPriceLine = quoteData && quoteData.c ? {
     yaxis: [
@@ -171,6 +169,9 @@ function StockQuote() {
 
   return (
     <div className={`stock-quote-container ${hideToolbar ? 'hide-toolbar hover-disabled' : ''}`}>
+      <div>
+        <button className="delete-button" onClick={onDelete}>X</button>
+      </div>
       <div>
         <label htmlFor="symbolInput">Symbol:</label>
         <input
