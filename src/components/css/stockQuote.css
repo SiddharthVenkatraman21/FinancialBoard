@@ -7,6 +7,20 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow */
     border: 2px solid #ccc;
   }
+
+  .hide-toolbar .apexcharts-toolbar {
+    display: none !important;
+  }
+
+
+  
+
+  /* Add this CSS to your stylesheet */
+.react-apex-chart.hover-disabled g[aria-labelledby] {
+    display: none !important;
+  }
+  
+  
   
   .symbol-input {
     width: 20%;
