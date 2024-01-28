@@ -14,7 +14,10 @@ function RecommendationWidget() {
     };
 
     return (
-        <div className="container">
+        <div>
+            <div className="info">
+            <h1 className="titleMarket"> Market Analysis</h1>
+        <div className="searchStuff">
             <input
                 type="text"
                 value={symbol}
@@ -23,14 +26,19 @@ function RecommendationWidget() {
                 className="searchBar"
             />
             <button className="clickButton" onClick={handleReloadWidget}>Recommendations</button>
+        </div>
+        </div>
+        <div className="container" style={{ width: '900px', height: '815px', minHeight: '200px', maxHeight: '80vh', overflow: 'auto',marginTop:'25px' }}>
+            
             <iframe
                 title="Finnhub Recommendation Widget"
                 src={widgetSrc}
-                width="85%" 
-                height="600px"
+                width="100%"
+                height="100%"
                 frameBorder="0"
                 scrolling="no"
             />
+        </div>
         </div>
     );
 }
