@@ -1,5 +1,3 @@
-// Dashboard.js
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './css/Dashboard.css';
@@ -13,8 +11,11 @@ function Dashboard() {
           Explore the latest trends in the financial world while tracking your personal financial responsibility!
         </p>
         <div className="cta-container">
-          <li className='cta-button'><Link to="/recommendation" className='cta-button'>Investments</Link></li>
-          <li className='cta-button secondary'><Link to="/budget" className='cta-button secondary'>Savings</Link></li>
+          <div>
+            {/* Use Link component for navigation */}
+            <Link to="/recommendation" className='cta-button'>Investments</Link>
+            <Link to="/budget" className='cta-button secondary'>Savings</Link>
+          </div>
         </div>
       </div>
     </div>
