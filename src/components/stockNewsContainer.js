@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import NewsComponent from './stockNewsCard'
-function StockNewsContainer()
-{
+import NewsComponent from './stockNewsCard';
+
+function StockNewsContainer() {
     const [newsData, setNewsData] = useState([]);
-    
 
     useEffect(() => {
         fetchData();
@@ -19,7 +18,7 @@ function StockNewsContainer()
     };
 
     return (
-        <div className="App">
+        <div className="App" style={{ height: '400px' }}>
             <h1 className="title">Foreign Exchange News</h1>
             <div style={{ marginLeft: '10px' }} className="newsCardsDivs">
                 {newsData.map((newsItem, index) => (

@@ -33,6 +33,7 @@
 
 .news-card * {
     text-decoration: none; /* Remove underline from all text elements within the card */
+    color:white;
 }
 
 a:link { 
