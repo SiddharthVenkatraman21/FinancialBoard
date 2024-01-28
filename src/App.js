@@ -17,7 +17,7 @@ function App() {
           <Navbar />
 
           <Routes>
-              <Route path="/"  />
+              <Route path="/"  element={<Dashboard/>}/>
               <Route path="/compare" element={<CompareView/>} />
               <Route path="/recommendation" element={<AnalysisPage/>} />
               <Route path="/budget" element={<BudgetPage/>} />
