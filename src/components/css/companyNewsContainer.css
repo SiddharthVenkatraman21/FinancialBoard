@@ -29,12 +29,7 @@ body {
 
 /* companyNewsContainer.css */
 
-.scrollableContainer {
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Disable vertical scrolling */
-    white-space: nowrap; /* Prevent wrapping of child elements */
-    max-width: 100%; /* Set maximum width */
-}
+
 
 .newsCardsDivs {
     display: flex; /* Ensure flex layout */
