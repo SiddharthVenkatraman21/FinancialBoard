@@ -15,6 +15,10 @@ import {
   collection,
   where,
   addDoc,
+  serverTimestamp,
+  arrayUnion,
+  doc,
+  updateDoc,
 } from "firebase/firestore";
 
 var firebaseConfig = {
@@ -66,9 +70,12 @@ var firebaseConfig = {
         name,
         authProvider: "local",
         email,
-        monthly_income: [],
-        monthly_savings: [],
         months_recorded: [],
+        monthly_income: [],
+        monthly_necessities: [],
+        monthly_wants: [],
+        monthly_savings: [],
+        monthly_total_expenses: [],
         stocks_of_interest: [],
       });
     } catch (err) {
@@ -91,9 +98,16 @@ var firebaseConfig = {
   export {
     auth,
     db,
+    doc,
+    updateDoc,
+    arrayUnion,
     signInWithGoogle,
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     sendPasswordReset,
     logout,
+    query, 
+    where, 
+    getDocs,
+    collection,
   };

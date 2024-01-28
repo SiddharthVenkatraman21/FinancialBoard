@@ -2,8 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import './css/budgetCalculator.css'; // Add your CSS file path
 import BudgetGraph from './budgetGraph'; // Import BudgetGraph component
+import { serverTimestamp, collection, addDoc, arrayUnion, doc, updateDoc } from "./firebase";
+import { useUser } from '../UserContext';
+import { db, query, where, getDocs } from './firebase';
 
 function BudgetCalculator({ initialBudgetData, onInputChange }) {
+  const { uid } = useUser();
   const [income, setIncome] = useState(null);
   const [expenses, setExpenses] = useState({
     needs: null,
@@ -96,6 +100,49 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
     }
   };
 
+  const handleMonthlySubmit = async () => {
+    // add MM:YYYY and monthly income vals to collection
+    if (!uid) {
+      console.log("User is not logged in");
+      return;
+    }
+    const userId = uid;
+
+    // finding documentID
+    const collectionRef = collection(db,"users");
+    const q = query(collectionRef,where("uid") == uid);
+
+    const querySnapshot = await getDocs(q);
+    const documentId = querySnapshot.docs[0].id;
+
+    let date = Date.now();
+    if(selectedMonth < 10) {
+      let date = Date.parse(selectedYear+"-0"+selectedMonth+"-01");
+    } else {
+      let date = Date.parse(selectedYear+"-"+selectedMonth+"-01");
+    }
+
+    try {
+      const userDocRef = doc(db, "users",documentId);
+      const expenses_sum = expenses.needs+expenses.wants;
+
+      await updateDoc(userDocRef, {
+        months_recorded: arrayUnion(date),
+        monthly_income: arrayUnion(income),
+        monthly_necessities: arrayUnion(expenses.needs),
+        monthly_wants: arrayUnion(expenses.wants),
+        monthly_savings: arrayUnion(expenses.savings),
+        monthly_total_expenses: arrayUnion(expenses_sum),
+      });
+      console.log("User info updated!");
+    } catch (e) {
+      console.error("Error updating user info: ", e);
+    }
+
+    
+
+  };
+
   // Render BudgetCalculator content
   return (
     <div className="budget-calculator-container">
@@ -143,6 +190,9 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
           value={income === null ? '' : income}
           onChange={handleIncomeChange}
         />
+      </div>
+      <div>
+        <button onClick={handleMonthlySubmit}>Save</button>
       </div>
       <div>
         <h2>Budget Portions</h2>
