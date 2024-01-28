@@ -18,8 +18,10 @@ function CreditPage() {
 
   const renderCreditCardDetails = (card) => (
     <div className="credit-card-details">
-      <p>Annual Fee: {card.annualFee}</p>
-      <p>Universal Cashback Percent: {card.universalCashbackPercent}</p>
+      <p><strong>Annual Fee:</strong> <span className="annual-fee">${card.annualFee}</span></p>
+      <p><strong>Universal Cashback Percent:</strong> <span className="cashback-percent">{card.universalCashbackPercent}%</span></p>
+
+
       <a href={card.url}>
       <div className="urlContainer">
         Learn More
@@ -39,8 +41,8 @@ function CreditPage() {
   };
   
   return (
-    <div>
-    <div className="Title">
+    <div className="outsideContainer">
+    <div className="Title" style={{marginTop:'225px',fontSize:'58px'}}>
       <h1> Credit Card Catalog</h1>
     </div>
     <div className="credit-page-container">
@@ -48,15 +50,16 @@ function CreditPage() {
         <div>
           <div className="credit-card">
             <h2>{creditCardData[currentCardIndex].name}</h2>
-            <p>Issuer: {creditCardData[currentCardIndex].issuer.replace(/_/g, ' ')}</p>
-            <p>Network: {creditCardData[currentCardIndex].network.replace(/_/g, ' ')}</p>
+                <p><strong>Issuer:</strong> <span className="issuer">{creditCardData[currentCardIndex].issuer.replace(/_/g, ' ')}</span></p>
+                <p><strong>Network:</strong> <span className="network">{creditCardData[currentCardIndex].network.replace(/_/g, ' ')}</span></p>
+
             {renderCreditCardDetails(creditCardData[currentCardIndex])}
           </div>
           <div className="navigation-buttons">
-            <button onClick={handlePrevCard} disabled={currentCardIndex === 0}>
+            <button onClick={handlePrevCard} disabled={currentCardIndex === 0} style={{marginRight:'8px'}}>
               Previous
             </button>
-            <button onClick={handleNextCard} disabled={currentCardIndex === creditCardData.length - 1}>
+            <button onClick={handleNextCard} disabled={currentCardIndex === creditCardData.length - 1} style={{marginLeft:'8px'}}>
               Next
             </button>
           </div>

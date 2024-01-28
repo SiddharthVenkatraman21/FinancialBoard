@@ -22,12 +22,13 @@
   }
   
   .title {
+    margin-top:60px;
     font-size: 3.5em;
-    margin-bottom: 20px;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center; /* Center text horizontally */
     margin-left:110px;
+    
   }
   
   .description {

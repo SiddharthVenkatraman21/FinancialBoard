@@ -152,6 +152,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
           id="monthSelect"
           value={selectedMonth}
           onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
+          style={{textAlign:'center'}}
         >
           <option value={1}>January</option>
           <option value={2}>February</option>
@@ -171,6 +172,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
           id="yearSelect"
           value={selectedYear}
           onChange={(e) => setSelectedYear(parseInt(e.target.value))}
+          style={{textAlign:'center'}}
         >
           {Array.from({ length: 101 }, (_, i) => 1950 + i).map((year) => (
             <option key={year} value={year}>
@@ -181,7 +183,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
       </div>
       <div>
         <h2> </h2>
-        <label htmlFor="incomeInput">Please input your monthly income:</label>
+        <label htmlFor="incomeInput">Monthly Income:</label>
         <input
           type="number"
           id="incomeInput"
@@ -190,7 +192,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
         />
       </div>
       <div>
-        <h2>Budget Portions</h2>
+        <h2>Budget Planning</h2>
         <label htmlFor="necessitiesPercentage">Necessities (%):</label>
         <input
           type="number"
@@ -214,7 +216,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
         />
       </div>
       <div>
-        <h2>Month Expenses</h2>
+        <h2>Actual Spending</h2>
         <label htmlFor="needsInput">Needs:</label>
         <input
           type="number"
@@ -242,7 +244,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
         />
       </div>
       <div>
-        <button onClick={handleMonthlySubmit}>Save</button>
+        <button style={{marginTop:'10px', width:'100px', marginBottom:'10px'}} onClick={handleMonthlySubmit}>Save</button>
       </div>
       <div className="remaining-budget">
         <h2>Budget Success</h2>

@@ -11,8 +11,9 @@ body {
 .credit-page-container {
     justify-content:center;
     max-width: 400px;
+    
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 75px;
     padding: 20px;
     border-radius: 15px;
     background-color: #2c2e33; /* Dark gray background */
@@ -23,23 +24,54 @@ body {
     text-align:center;
   }
 
+  .Title{
+    text-align:center;
+    
+
+  }
+
   .credit-card-details {
 
     color: #202124; /* White text */
   }
 
+  /* CSS */
 
-  .credit-page-container {
-    max-width: 400px;
-    margin: 0 auto;
-    margin-top: 10px;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: #2c2e33; /* Dark gray background */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow */
-    /* border: 2px solid #ccc; */
-    color: #fff; /* White text */
-  }
+/* Define colors for different data */
+/* CSS */
+
+.credit-card-details p {
+  color: #fff; /* Set label color to white */
+  margin-bottom: 10px;
+}
+
+.credit-card-details p strong {
+  font-weight: bold; /* Make label text bold */
+}
+
+.credit-card-details p .annual-fee {
+  color: #FF5733; /* Set color for annual fee */
+}
+.credit-card-details p .cashback-percent {
+  color: #8A2BE2; /* Set color for cashback percent to purple */
+}
+
+/* Add more classes and colors as needed */
+
+
+.credit-card p .issuer {
+  color: #4CAF50; /* Set color for issuer */
+}
+
+.credit-card p .network {
+  color: #FFC107; /* Set color for network */
+}
+
+/* Add more classes and colors as needed */
+
+
+
+ 
 
   .credit-card-page-container p{
     margin-bottom:10px;
@@ -49,7 +81,7 @@ body {
     color:white;
     background-color:#007bff;
     text-align:center;
-    height:50px;
+    height:40px;
     width:200px;
     border-radius:10px;
     margin-left:22%;

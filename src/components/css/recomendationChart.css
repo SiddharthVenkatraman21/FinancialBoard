@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
-    border: 1px solid white;
+    /* border: 1px solid white; */
     border-radius: 10px;
     width: 60%;
     margin-top: 20px;
@@ -39,6 +39,7 @@
     color:white;
     margin-left:15px;
     font-size:48px;
+    margin-top:50px;
 }
     
 
