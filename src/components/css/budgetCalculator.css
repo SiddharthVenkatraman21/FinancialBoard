@@ -6,25 +6,24 @@
     background-color: #2c2e33; /* Dark gray background */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow */
     border: 2px solid #ccc;
+    color: #fff; /* White text */
   }
   
   input {
     width: 100%;
-    padding: 8px;
     margin-bottom: 10px;
     margin-top: 5px;
     font-size: 16px;
     border: 1px solid #555; /* Darker border */
     border-radius: 5px;
     text-align: center;
-    font-weight: bold;
     background-color: #333; /* Dark input background */
     color: #fff; /* White text */
   }
   
   button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #007bff; /* Blue button */
     color: #fff;
     border: none;
@@ -38,18 +37,18 @@
     cursor: not-allowed;
   }
   
-  .budget-results {
-    margin-top: 20px;
-  }
-  
-  .budget-results h2 {
+  h1, h2 {
     color: #fff; /* White text */
     margin-bottom: 10px;
   }
   
   .budget-results p {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-weight: bold;
-    color: #fff; /* White text */
+  }
+  
+  .remaining-budget {
+    margin-top: 5px;
+    font-size: 15px;
   }
   

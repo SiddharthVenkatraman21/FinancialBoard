@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+// BudgetCalculator.js
+import React, { useState, useEffect } from 'react';
 import './css/budgetCalculator.css'; // Add your CSS file path
+import BudgetGraph from './budgetGraph'; // Import BudgetGraph component
 
-function BudgetCalculator() {
+function BudgetCalculator({ initialBudgetData, onInputChange }) {
   const [income, setIncome] = useState(null);
   const [expenses, setExpenses] = useState({
     needs: null,
@@ -36,6 +38,15 @@ function BudgetCalculator() {
       [category]: value,
     }));
   };
+
+  useEffect(() => {
+    // Update the parent state whenever there's a change in the input fields
+    onInputChange({
+      income,
+      expenses,
+      idealPercentages,
+    });
+  }, [income, expenses, idealPercentages, onInputChange]);
 
   const calculateBudget = () => {
     const necessitiesPercentage = (expenses.needs / income) * 100 || 0;
@@ -85,26 +96,12 @@ function BudgetCalculator() {
     }
   };
 
-  const handleSave = () => {
-    // Log the data to the console
-    console.log({
-      income,
-      expenses,
-      idealPercentages,
-      selectedMonth,
-      selectedYear,
-      budgetData,
-    });
-  
-    // Add logic to save data to a database if needed
-    console.log('Data saved:', { income, expenses, idealPercentages, selectedMonth, selectedYear });
-  };
-
+  // Render BudgetCalculator content
   return (
     <div className="budget-calculator-container">
       <h1>Budget Calculator</h1>
       <div>
-        <h2>Select Month and Year</h2>
+        <h2> </h2>
         <label htmlFor="monthSelect">Month:</label>
         <select
           id="monthSelect"
@@ -124,7 +121,7 @@ function BudgetCalculator() {
           <option value={11}>November</option>
           <option value={12}>December</option>
         </select>
-        <label htmlFor="yearSelect">Year:</label>
+        <label htmlFor="yearSelect">            Year:</label>
         <select
           id="yearSelect"
           value={selectedYear}
@@ -138,7 +135,7 @@ function BudgetCalculator() {
         </select>
       </div>
       <div>
-        <h2>Your Monthly Income</h2>
+        <h2> </h2>
         <label htmlFor="incomeInput">Please input your monthly income:</label>
         <input
           type="number"
@@ -148,7 +145,7 @@ function BudgetCalculator() {
         />
       </div>
       <div>
-        <h2>Ideal Budget Percentages</h2>
+        <h2>Budget Portions</h2>
         <label htmlFor="necessitiesPercentage">Necessities (%):</label>
         <input
           type="number"
@@ -172,8 +169,8 @@ function BudgetCalculator() {
         />
       </div>
       <div>
-        <h2>Your Expenses This Month</h2>
-        <label htmlFor="needsInput">Monthly Needs:</label>
+        <h2>Month Expenses</h2>
+        <label htmlFor="needsInput">Needs:</label>
         <input
           type="number"
           id="needsInput"
@@ -182,7 +179,7 @@ function BudgetCalculator() {
         />
       </div>
       <div>
-        <label htmlFor="wantsInput">Monthly Wants:</label>
+        <label htmlFor="wantsInput">Wants:</label>
         <input
           type="number"
           id="wantsInput"
@@ -191,7 +188,7 @@ function BudgetCalculator() {
         />
       </div>
       <div>
-        <label htmlFor="savingsInput">Monthly Savings/Debt Repayments:</label>
+        <label htmlFor="savingsInput">Savings/Debt Repayments:</label>
         <input
           type="number"
           id="savingsInput"
@@ -200,7 +197,7 @@ function BudgetCalculator() {
         />
       </div>
       <div className="remaining-budget">
-        <h2>Your Budget Corrections</h2>
+        <h2>Budget Success</h2>
         {expenses.needs !== null && (
           <p>Necessities: {getRemainingBudgetMessage('necessities', budgetData.remainingNecessitiesBudget)}</p>
         )}
@@ -211,7 +208,7 @@ function BudgetCalculator() {
           <p>Savings: {getRemainingBudgetMessage('savings', budgetData.remainingSavingsBudget)}</p>
         )}
       </div>
-      <button onClick={handleSave}>Save</button>
+      {/* BudgetGraph is not rendered here */}
     </div>
   );
 }
