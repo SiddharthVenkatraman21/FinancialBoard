@@ -4,12 +4,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color:#202124;
   }
   .login__container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #dcdcdc;
+    background-color: black;
     padding: 30px;
   }
   .login__textBox {
@@ -21,12 +22,13 @@
     padding: 10px;
     font-size: 18px;
     margin-bottom: 10px;
-    border: none;
-    color: white;
-    background-color: black;
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color:  #007bff;
   }
   .login__google {
-    background-color: #4285f4;
+    background-color:  #007bff;
+    color: #121212;
   }
   .login div {
     margin-top: 7px;
