@@ -1,0 +1,37 @@
+/* SavingsPage.css */
+
+body {
+    background-color: #202124; /* Light gray background color */
+    font-family: Arial, sans-serif;
+  }
+  
+  div {
+    background-color: #202124; /* White background color for content */
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  h2 {
+    color: #333; /* Dark gray text color */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  thead {
+    background-color: #333; /* Dark gray background color for table header */
+    color: #fff; /* White text color for table header */
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light gray border color between table rows */
+  }
+  
+  tbody tr:hover {
+    background-color: #ddd; /* Light gray background color on hover */
+  }

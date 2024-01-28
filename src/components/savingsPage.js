@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { db } from './firebase'; // Update the import path based on your file structure
+import './css/savingsPage.css';
 
 function SavingsPage() {
+  // Define state to store data retrieved from Firebase
   const [data, setData] = useState({
     months: [],
     expenses: [],
     savings: [],
   });
 
+  // Use useEffect hook to fetch data from Firebase when the component mounts
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Fetch data from Firebase
-        const snapshot = await db.collection('your_collection_name').doc('your_document_id').get();
+        const snapshot = await db.collection('users').doc('cHpa7n3YHBYRZ8Dlw1eB').get();
         const userData = snapshot.data();
 
         // Extract data for the table
@@ -20,6 +23,9 @@ function SavingsPage() {
         const expenses = userData.monthly_total_expenses || [];
         const savings = userData.monthly_savings || [];
 
+        console.log(months, expenses, savings);
+
+        // Update state with fetched data
         setData({
           months,
           expenses,
@@ -30,8 +36,9 @@ function SavingsPage() {
       }
     };
 
+    // Call fetchData function when the component mounts
     fetchData();
-  }, []); // Empty dependency array to run the effect only once
+  }, []); // Empty dependency array to run the effect only once when the component mounts
 
   return (
     <div>
@@ -45,6 +52,7 @@ function SavingsPage() {
           </tr>
         </thead>
         <tbody>
+          {/* Map over the months array to render table rows */}
           {data.months.map((month, index) => (
             <tr key={index}>
               <td>{month}</td>

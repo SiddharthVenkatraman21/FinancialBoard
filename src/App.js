@@ -14,7 +14,7 @@ import Reset from './components/Reset';
 import BudgetPage from './components/budgetPage';
 import Dashboard from './components/Dashboard'
 import CreditPage from './components/creditPage';
-import savingsPage from './components/savingsPage';
+import SavingsPage from './components/savingsPage';
 
 function App() {
   
@@ -31,7 +31,7 @@ function App() {
               <Route path="/recommendation" element={<AnalysisPage/>} />
               <Route path="/budget" element={<BudgetPage/>} />
               <Route path="/credit" element={<CreditPage/>} />
-              <Route path="/savingsPage" element={<savingsPage/>} />
+              <Route path="/savingsPage" element={<SavingsPage/>} />
               {/* <Route path="/contacts" element={<Contacts/>} />
               <Route path="/map" element={<Map/>} /> */}
           </Routes>
