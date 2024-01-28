@@ -6,26 +6,29 @@ import BudgetCalculator from './components/budgetCalculator';
 import NewsComponent from './components/stockNewsCard';
 import CompanyNewsContainer from './components/CompanyNewsContainer'
 import StockNewsContainer from './components/stockNewsContainer'
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from './components/Login';
 
 
 function App() {
 
-  
-
-    
-
   return (
     <div className="App">
-      
-      {/* <BudgetCalculator/>
-      <StockQuote/> */}
-      <div className="StockBudget">
-        <StockQuote/>
-        <BudgetCalculator/>
+<Router>
+  <Routes>
+    <Route path="/" element={<Login />} />
+    <Route path="/dashboard" element={
+      <div>
+        <div className="StockBudget">
+          <StockQuote/>
+          <BudgetCalculator/>
+        </div>
+        <CompanyNewsContainer/>
+        <StockNewsContainer/>
       </div>
-      <CompanyNewsContainer/>
-      <StockNewsContainer/>
+    } />
+    </Routes>
+  </Router>
     </div>
   );
 }
