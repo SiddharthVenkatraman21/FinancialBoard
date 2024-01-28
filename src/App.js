@@ -8,6 +8,7 @@ import RecommendationWidget from './components/recomendationChart';
 import Navbar from './components/navbar'
 import CompareView from './components/compareview'
 import AnalysisPage from './components/analysisPage'
+import BudgetPage from './components/budgetPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/"  />
               <Route path="/compare" element={<CompareView/>} />
               <Route path="/recommendation" element={<AnalysisPage/>} />
+              <Route path="/budget" element={<BudgetPage/>} />
               {/* <Route path="/contacts" element={<Contacts/>} />
               <Route path="/map" element={<Map/>} /> */}
           </Routes>
