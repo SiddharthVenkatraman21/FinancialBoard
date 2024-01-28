@@ -6,13 +6,8 @@ import { serverTimestamp, collection, addDoc, arrayUnion, doc, updateDoc } from 
 import { useUser } from '../UserContext';
 import { db, query, where, getDocs } from './firebase';
 
-<<<<<<< HEAD
-
-function BudgetCalculator() {
-=======
 function BudgetCalculator({ initialBudgetData, onInputChange }) {
   const { uid } = useUser();
->>>>>>> main
   const [income, setIncome] = useState(null);
   const [expenses, setExpenses] = useState({
     needs: null,
