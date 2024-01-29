@@ -114,15 +114,17 @@ function StockQuote({ onDelete }) {
 
   const updateChart = (data) => {
     if (data) {
-      const isPriceIncreased = parseFloat(data.c) > parseFloat(data.o);
+      const isPriceIncreased = parseFloat(data.dp) >= 0;
       let candleColor
       if (isPriceIncreased)
       {
         candleColor = '#4CAF50'
+        console.log("green")
       }
       else
       {
         candleColor = '#F44336'
+        console.log("red")
       }
 
 
@@ -130,8 +132,8 @@ function StockQuote({ onDelete }) {
       const chartData = [{
         data: [{
           x: new Date().getTime(),
-          y: [data.o, data.h, data.l, data.pc],
-          fillColor: candleColor,
+          y: [data.o, data.h, data.l, data.c],
+          // fillColor: candleColor,
         }],
       }];
   
