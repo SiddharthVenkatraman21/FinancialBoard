@@ -13,8 +13,8 @@ function Dashboard() {
         <div className="cta-container">
           <div>
             {/* Use Link component for navigation */}
-            <Link to="/recommendation" className='cta-button'>Investments</Link>
-            <Link to="/budget" className='cta-button secondary'>Savings</Link>
+            <Link to="/FinancialBoard/recommendation" className='cta-button'>Investments</Link>
+            <Link to="/FinancialBoard/budget" className='cta-button secondary'>Savings</Link>
           </div>
         </div>
       </div>
