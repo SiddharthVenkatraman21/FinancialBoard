@@ -44,13 +44,13 @@ function Login() {
           Login with Google
         </button>
         <div>
-          <Link to="/reset">Forgot Password</Link>
+          <Link to="/FinancialBoard/reset">Forgot Password</Link>
         </div>
         <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
+          Don't have an account? <Link to="/FinancialBoard/register">Register</Link> now.
         </div>
         <div>
-          Click here to use site as a <Link to="/dashboard">guest</Link>.
+          Click here to use site as a <Link to="/FinancialBoard/dashboard">guest</Link>.
         </div>
       </div>
     </div>

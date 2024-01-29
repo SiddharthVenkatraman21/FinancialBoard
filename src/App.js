@@ -45,22 +45,21 @@ function App() {
             <h2>This website is intended for viewing on a laptop or computer</h2>
             <p>Please resize your browser window for the best experience.</p>
           </div>
-        ) : (
-          <Routes>
-            <Route element={<Dashboard />} />
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/reset" element={<Reset />} />
-            <Route path="/compare" element={<CompareView />} />
-            <Route path="/recommendation" element={<AnalysisPage />} />
-            <Route path="/budget" element={<BudgetPage />} />
-            <Route path="/credit" element={<CreditPage />} />
-            {/* <Route path="/savingsPage" element={<SavingsPage/>} /> */}
-            {/* <Route path="/contacts" element={<Contacts/>} />
-            <Route path="/map" element={<Map/>} /> */}
-          </Routes>
-        )}
+        ) : null /* Remove the Routes wrapper for small screens */}
+        <Routes>
+          <Route element={<Dashboard />} />
+          <Route path="/FinancialBoard/" element={<Dashboard />} />
+          <Route path="/FinancialBoard/login" element={<Login />} />
+          <Route path="/FinancialBoard/register" element={<Register />} />
+          <Route path="/FinancialBoard/reset" element={<Reset />} />
+          <Route path="/FinancialBoard/compare" element={<CompareView />} />
+          <Route path="/FinancialBoard/recommendation" element={<AnalysisPage />} />
+          <Route path="/FinancialBoard/budget" element={<BudgetPage />} />
+          <Route path="/FinancialBoard/credit" element={<CreditPage />} />
+          {/* <Route path="/savingsPage" element={<SavingsPage/>} /> */}
+          {/* <Route path="/contacts" element={<Contacts/>} />
+          <Route path="/map" element={<Map/>} /> */}
+        </Routes>
       </div>
     </Router>
   );
