@@ -1,96 +1,69 @@
 .searchContainer {
     display: flex;
-    gap: 8px; /* Adjust the gap between input and button */
-     /* Adjust the width as needed */
+    gap: 2%; /* Adjust the gap between input and button */
     justify-content: center;
-    margin-right:100px;
-    margin-bottom:15px;
-    
+    margin-right: 5.58%; /* Converted to percentage */
+    margin-top:0.97%;
+}
+
+.App{
+    height:100%;
 }
 
 .searchButton{
-    width:120px;
-    height:30px;
-    justify-content: center;
-    padding:0;
-    margin-top:20px;
+    width: 35%; /* Converted to percentage */
+    margin-top: 0.97%; /* Converted to percentage */
+    font-size:1.8em;
+    height:2.9%;
+    background-color: #007bff;
+    border-radius:10px;
+    text-align:center;
 
+
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .searchInput{
-    margin-top: 20px;
-    width:100px;
-    height:30px;
+    margin-top: 1.94%; /* Converted to percentage */
+    width: 35%; /* Converted to percentage */
+    height: 2.9%; /* Converted to percentage */
+    font-size:1.8em;
 }
 
-body {
-    overflow-x: hidden;
-  }
-
-/* companyNewsContainer.css */
-
-
-
-.newsCardsDivs {
-    display: flex; /* Ensure flex layout */
+.titleCompany {
+    margin-right: 7.27%; /* Converted to percentage */
+    font-size: 4.6vw;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center text horizontally */
+    margin-top:4.85%;
 }
-
-body {
-    overflow-x: hidden;
-  }
-  
-
-
-  
-
-.title {
-    text-align: center; /* Center the title */
-    font-size: 48px; /* Adjust font size as needed */
-    margin-top: 35px; /* Add some space below the title */
-    margin-right:130px;
+.info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
-
 .container{
-    margin-left:10px;
+    margin-left: 0.56%; /* Converted to percentage */
 }
 
-.scrollableContainer {
-    overflow-x: auto;
-    max-width: 100%; /* Set the maximum width of the scrollable container */
-    padding-bottom: 20px; /* Add padding to ensure space for horizontal scrollbar */
-  }
-  
 
 
-/* companyNewsContainer.css */
-
-/* Inside companyNewsContainer.css */
 .newsCardsDivs {
     display: flex;
     flex-wrap: wrap;
-    gap:40px;
+    gap: 25px 55px; /* Converted to percentage */
+    margin-top:25px;
+    height:45%;
+    width:80%;
+    margin-left:3%;
 }
 
 .companyNewsCard {
-    width: calc(50% - 20px); /* Two cards per row with spacing */
-    margin-bottom: 20px; /* Adjust spacing between rows */
+    width: calc(50% - 1.94%); /* Two cards per row with spacing */
+    margin-bottom: 1.94%; /* Adjust spacing between rows */
 }
-
-
-
-/* Add other styles as needed */
-
-
-  
-  /* Add other styles as needed */
-  
-
-  
-  /* Add other styles as needed */
-  
-
-
-
-
-
 

@@ -244,7 +244,7 @@ function BudgetCalculator({ initialBudgetData, onInputChange }) {
         />
       </div>
       <div>
-        <button style={{marginTop:'10px', width:'100px', marginBottom:'10px'}} onClick={handleMonthlySubmit}>Save</button>
+        <button style={{marginTop:'10px', width:'100px', marginBottom:'10px'}} className="budgetButton" onClick={handleMonthlySubmit}>Save</button>
       </div>
       <div className="remaining-budget">
         <h2>Budget Success</h2>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './css/stockNewsCard.css';
+import './css/marketNewsCard.css';
 
 function NewsCard({ newsItem }) {
     // Function to convert Unix timestamp to human-readable date
@@ -27,14 +27,12 @@ function NewsCard({ newsItem }) {
     }, []); // Run only once after initial render
 
     return (
-        <a className="news-card" href={newsItem.url} target="_blank" rel="noopener noreferrer">
+        <a className="market-news-card" href={newsItem.url} target="_blank" rel="noopener noreferrer">
             {newsItem.image && <img src={newsItem.image} alt="News" />}
             <div className="date-badge">{formatDate(newsItem.datetime)}</div>
             <div className="news-card-content">
                 <h2>{newsItem.headline}</h2>
-                <div className="news-card-footer">
-                    <p>Source: {newsItem.source}</p>
-                </div>
+                    <p className="news-card-footer">Source: {newsItem.source}</p>
             </div>
         </a>
     );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './css/Navbar.css';
 
 const Navbar = () => {
@@ -9,17 +9,14 @@ const Navbar = () => {
         <ul className='nav-list'>
           {/* Login link positioned to the far left */}
           {/* Existing navigation links */}
-          <li className='nav-item'><Link to="/" className='nav-link'>Home</Link></li>
-          <li className='nav-item'><Link to="/compare" className='nav-link'>Compare</Link></li>
-          <li className='nav-item'><Link to="/recommendation" className='nav-link'>Recommendations</Link></li>
-          <li className='nav-item'><Link to="/budget" className='nav-link'>Budget</Link></li>
-          <li className='nav-item'><Link to="/credit" className='nav-link'>Credit</Link></li>
-          <li className='nav-item'><Link to ="/savings" className='nav-link'>Savings</Link></li>
-          <li className='nav-item'>
-            <Link to="/login" className='nav-link'>Login</Link>
-          </li>
-          {/* <li className='nav-item'><Link to="/contacts" className='nav-link'>Contacts</Link></li>
-          <li className='nav-item'><Link to="/map" className='nav-link'>Map</Link></li> */}
+          <li className='nav-item'><NavLink exact to="/" className='nav-link' activeClassName='active-link'>Home</NavLink></li>
+          <li className='nav-item'><NavLink to="/compare" className='nav-link' activeClassName='active-link'>Compare</NavLink></li>
+          <li className='nav-item'><NavLink to="/recommendation" className='nav-link' activeClassName='active-link'>Recommendations</NavLink></li>
+          <li className='nav-item'><NavLink to="/budget" className='nav-link' activeClassName='active-link'>Budget</NavLink></li>
+          <li className='nav-item'><NavLink to="/credit" className='nav-link' activeClassName='active-link'>Credit</NavLink></li>
+          <li className='nav-item'><NavLink to="/login" className='nav-link' activeClassName='active-link'>Login</NavLink></li>
+          {/* <li className='nav-item'><NavLink to="/contacts" className='nav-link' activeClassName='active-link'>Contacts</NavLink></li>
+          <li className='nav-item'><NavLink to="/map" className='nav-link' activeClassName='active-link'>Map</NavLink></li> */}
         </ul>
       </nav>
     </div>

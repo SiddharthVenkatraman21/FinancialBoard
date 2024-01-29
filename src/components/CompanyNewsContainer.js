@@ -54,8 +54,9 @@ function CompanyNewsContainer() {
 
     return (
         <div className="App">
-            <h1 className="title">Latest Company News</h1>
-            <div className="searchContainer">
+            <div className="info">
+                <h1 className="titleCompany"> Company News</h1>
+                <div className="searchContainer">
                 <input
                     type="text"
                     value={symbol}
@@ -65,6 +66,7 @@ function CompanyNewsContainer() {
                 <button className="searchButton" onClick={handleFetchData} disabled={loading}>
                     {loading ? 'Searching...' : 'Search'}
                 </button>
+                </div>
             </div>
                 <div className="newsCardsDivs">
                     {companyNews.map((newsItem, index) => (

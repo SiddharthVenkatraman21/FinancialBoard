@@ -22,7 +22,7 @@ function CompareView() {
     <div
       style={{
         backgroundColor: '#121212',
-        padding: '20px',
+        padding: '2%',
         minHeight: '100vh',
         position: 'relative',
       }}
@@ -30,14 +30,14 @@ function CompareView() {
       <button
         style={{
           position: 'absolute',
-          top: '20px',
-          right: '60px',
-          padding: '10px',
-          fontSize: '16px',
+          top: '2%',
+          right: '5%',
+          padding: '1%',
+          fontSize: '1.5vw', // Converted to percentage
           backgroundColor: '#007bff',
           color: 'white',
           border: 'none',
-          borderRadius: '10px',
+          borderRadius: '1vw', // Converted to percentage
           cursor: 'pointer',
           width: '10%',
         }}

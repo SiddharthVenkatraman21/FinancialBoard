@@ -3,20 +3,30 @@
     flex-direction: column;
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
-    /* border: 1px solid white; */
     border-radius: 10px;
-    width: 60%;
-    margin-top: 20px;
 }
 
 .searchBar {
-    margin-top: 10px;
-    width: 100px; /* Adjust the width of the input field */
+    margin-top: 0.97%; /* Converted to percentage */
+    width: 35%; /* Converted to percentage */
+    font-size:1.8em;
+    height:2.9%
 }
 
 .clickButton {
-    width: 150px;
-    margin-top: 10px; /* Add some margin to separate from input field */
+    width: 35%; /* Converted to percentage */
+    margin-top: 0.97%; /* Converted to percentage */
+    font-size:1.8em;
+    height:2.9%;
+    background-color: #007bff;
+    border-radius:10px;
+    text-align:center;
+
+
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .axis-label {
@@ -25,25 +35,22 @@
 
 .iframe-container {
     width: 100%; /* Adjust the width of the iframe container */
-    max-width: 800px; /* Set a maximum width to prevent excessive stretching */
 }
 
 .searchStuff{
     display:flex;
     justify-content: center;
-    gap:10px;
-    margin-top:10px;
+    gap:1.12%; /* Converted to percentage */
+    margin-top: 0.97%; /* Converted to percentage */
 }
 
 .titleMarket{
     color:white;
-    margin-left:15px;
-    font-size:48px;
-    margin-top:50px;
+    margin-left:0.84%; /* Converted to percentage */
+    font-size:4.6vw; /* Adjust font size as needed */
+    margin-top: 4.85%; /* Converted to percentage */
 }
     
-
-
 .info {
     display: flex;
     align-items: center; /* Center items vertically */

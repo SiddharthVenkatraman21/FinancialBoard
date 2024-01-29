@@ -18,14 +18,15 @@ function StockNewsContainer() {
     };
 
     return (
-        <div className="App" style={{ height: '400px' }}>
-            <h1 className="title" style={{marginLeft:'100px', fontSize:'48px'}}> Foreign Exchange News</h1>
-            <div style={{ marginLeft: '10px', gap:'20px' }} className="newsCardsDivs">
-                {newsData.map((newsItem, index) => (
-                    <NewsComponent key={index} newsItem={newsItem} />
-                ))}
-            </div>
-        </div>
+    <div className="marketNews-App" style={{ marginRight:'5%',height: '100%', alignItems:'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+    <h1 className="title" style={{ marginLeft: '100px', fontSize: '48px' }}>Foreign Exchange News</h1>
+    <div style={{gap: '20px', width:'100%' }} className="newsCardsDivs">
+        {newsData.map((newsItem, index) => (
+            <NewsComponent key={index} newsItem={newsItem} />
+        ))}
+    </div>
+</div>
+
     );
 }
 
